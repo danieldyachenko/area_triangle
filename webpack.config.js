@@ -1,4 +1,4 @@
-var path = require('path');
+const path = require('path');
 
 module.exports = {
     entry: "./src/index.jsx", // входная точка - исходный файл
@@ -16,6 +16,10 @@ module.exports = {
                 options:{
                     presets:["@babel/preset-env", "@babel/preset-react"]    // используемые плагины
                 }
+            },
+            {
+                test: /\.css$/,
+                use: ["style-loader", "css-loader"]
             }
         ]
     }
